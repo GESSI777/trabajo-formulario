@@ -75,9 +75,7 @@ public class Formulario extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtApellidos = new javax.swing.JTextField();
         txtAño = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        txtRepetirContraseña = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
         cbxDia = new javax.swing.JComboBox<>();
@@ -95,6 +93,8 @@ public class Formulario extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        pwdContrasena = new javax.swing.JPasswordField();
+        pwdRepetirContrasena = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FORMULARIO 1");
@@ -103,7 +103,7 @@ public class Formulario extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("FORMULARIO");
 
-        jLabel2.setText("Nombre :");
+        jLabel2.setText("Nombres :");
 
         jLabel3.setText("Apellidos :");
 
@@ -204,6 +204,12 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel14.setText("@");
 
+        pwdRepetirContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwdRepetirContrasenaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -232,14 +238,6 @@ public class Formulario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtRepetirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(cbDeportes)
@@ -253,24 +251,27 @@ public class Formulario extends javax.swing.JFrame {
                                         .addComponent(btnCerrar)
                                         .addGap(18, 18, 18)
                                         .addComponent(btnLimpiar))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                    .addComponent(pwdContrasena)
+                                    .addComponent(pwdRepetirContrasena))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbxEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 47, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(51, 51, 51))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnGuardar)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addComponent(jLabel10)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnGuardar)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -330,28 +331,30 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(cbxDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(93, 93, 93)
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel6)
                                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cbxEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel14))
-                                .addGap(12, 12, 12)
-                                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtRepetirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
+                                .addGap(18, 18, 18)
+                                .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(pwdRepetirContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8))
+                                .addGap(73, 73, 73)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cbEconomia)
                             .addComponent(cbTecnologia)
@@ -372,7 +375,7 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(btnCerrar)
                     .addComponent(btnLimpiar)
                     .addComponent(btnTraspasar))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -386,10 +389,8 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAñoActionPerformed
 
     private void cbxDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxDiaActionPerformed
- initComponents();
-        for(int  i=1; i<32 ; i++)
-            cbxDia.addItem(String.valueOf(i));
-           
+ 
+        
   
             
      
@@ -409,15 +410,15 @@ public class Formulario extends javax.swing.JFrame {
             String fecha1;
             int error=0;
             
-            if (txtNombre.getText().length()==0 ||txtApellidos.getText().length()==0||txtAño.getText().length()==0|| txtEmail.getText().length()==0 || txtContraseña.getText().length()==00 || txtRepetirContraseña.getText().length()==00) {
+            if (txtNombre.getText().length()==0 ||txtApellidos.getText().length()==0||txtAño.getText().length()==0|| txtEmail.getText().length()==0 || pwdContrasena.getText().length()==00 || pwdRepetirContrasena.getText().length()==00) {
                 error=1;
             } else {
                 fecha1 = txtAño.getText();
                 fecha= Integer.parseInt(fecha1);
-                if (fecha<1990|| fecha>2017) {
+                if (fecha<1960|| fecha>2023) {
                 error=2;
                 } else {
-                if (txtContraseña.getText().contains(txtRepetirContraseña.getText())==false) {
+                if (pwdContrasena.getText().contains(pwdRepetirContrasena.getText())==false) {
                 error=3;        
                     } else {
                 if (rbMasculino.isSelected()==false && rbFemenino.isSelected()==false) {
@@ -448,7 +449,7 @@ public class Formulario extends javax.swing.JFrame {
                 }
                 case (3):{
                     JOptionPane.showMessageDialog(null,"la contrasena y la verificacion no coinciden");
-                    txtRepetirContraseña.setText("");
+                    pwdRepetirContrasena.setText("");
                     break;
                 }
                 case (4):{
@@ -476,8 +477,8 @@ public class Formulario extends javax.swing.JFrame {
               txtApellidos.setText("");
               txtAño.setText("");
               txtEmail.setText("");
-              txtContraseña.setText("");
-              txtRepetirContraseña.setText("");
+              pwdContrasena.setText("");
+              pwdRepetirContrasena.setText("");
               rbFemenino.setSelected(false);
               rbMasculino.setSelected(false);
               cbEconomia.setSelected(false);
@@ -497,10 +498,34 @@ public class Formulario extends javax.swing.JFrame {
                 } else {
                     sexo= " Femenino ";
                 }
+                
+           
+                 String seleccion="";
+                       if (cbEconomia.isSelected()) {
+                           seleccion+="Economia ";
+                       }
+                       if (cbTecnologia.isSelected()) {
+                           seleccion+=" Tecnologia ";
+                       }
+                        if (cbJuegos.isSelected()) {
+                           seleccion+=" Juegos ";
+                       }
+                       if (cbDeportes.isSelected()) {
+                           seleccion+=" Deportes ";
+                       }
+                           if (cbMusica.isSelected()) {
+                           seleccion+=" Musica ";
+                       }
+                       if (cbFotografia.isSelected()) {
+                           seleccion+=" Fotografia ";
+                       }
+                      
+                       
+                       
                     
-                txtArea.append("Nombre:  " + txtNombre.getText()+" "+"Apellidos:  "+ txtApellidos.getText()+" Fecha de Nacimiento:  "
-                +(String)cbxDia.getSelectedItem()+" / "+(String)cbxMes.getSelectedItem()+" / "+ txtAño.getText()+ " " +"Sexo: "
-                 + sexo +" Email: " +txtEmail.getText().concat("@").concat((String)cbxEmail.getSelectedItem())+"\n");
+                txtArea.append(" Nombres:  " + txtNombre.getText()+" "+"  Apellidos:  "+ txtApellidos.getText()+"   Fecha de Nacimiento:  "
+                +(String)cbxDia.getSelectedItem()+"/"+(String)cbxMes.getSelectedItem()+"/"+ txtAño.getText()+ " " +"  Sexo: "
+                 + sexo +"   Email: " +txtEmail.getText().concat("@").concat((String)cbxEmail.getSelectedItem())+ "    Interes: "+seleccion+" \n ");
                         
             }
         // TODO add your handling code here:
@@ -509,38 +534,55 @@ public class Formulario extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
            if (evt .getSource()==btnGuardar) {
                if (txtNombre.getText().length()==0 ||txtApellidos.getText().length()==0
-              ||txtAño.getText().length()==0|| txtEmail.getText().length()==0 || txtContraseña.getText().length()==00
-              || txtRepetirContraseña.getText().length()==00 ||(rbMasculino.isSelected()==false 
+              ||txtAño.getText().length()==0|| txtEmail.getText().length()==0 || pwdContrasena.getText().length()==00
+              || pwdRepetirContrasena.getText().length()==00 ||(rbMasculino.isSelected()==false 
               && rbFemenino.isSelected()==false) ) {
                    JOptionPane.showMessageDialog(null, "Debe ingresar sus datos");
                } else {
                    try {
-                        BufferedWriter bw=new BufferedWriter(new FileWriter("c:/Archivo/leccion.txt",true));
+                        BufferedWriter formulario=new BufferedWriter(new FileWriter("C:/leccion/formulario.txt",true));
                        nombre =txtNombre.getText();
                        apellidos = txtApellidos.getText();
-                       mes=(String)cbxMes.getSelectedItem();
                        dia=(String)cbxDia.getSelectedItem();
-                       email = txtEmail.getText();
-                       contraseña = txtContraseña.getText();
+                       mes=(String)cbxMes.getSelectedItem();
                        año = txtAño.getText();
+                       email = txtEmail.getText().concat("@".concat((String)cbxEmail.getSelectedItem()));
+                       contraseña = pwdContrasena.getText();
                        
-                       p1=(String)cbEconomia.getText();
-                       p2=(String) cbDeportes.getText();
-                       p3=(String) cbTecnologia.getText();
-                       p4=(String) cbJuegos.getText();
-                       p5=(String) cbFotografia.getText();
-                       p6=(String) cbMusica.getText();
-        
-                     
-           
+                  String seleccion="";
+                       if (cbEconomia.isSelected()) {
+                           seleccion+="Economia ";
+                       }
+                       if (cbTecnologia.isSelected()) {
+                           seleccion+=" Tecnologia ";
+                       }
+                        if (cbJuegos.isSelected()) {
+                           seleccion+=" Juegos ";
+                       }
+                       if (cbDeportes.isSelected()) {
+                           seleccion+=" Deportes ";
+                       }
+                           if (cbMusica.isSelected()) {
+                           seleccion+=" Musica ";
+                       }
+                       if (cbFotografia.isSelected()) {
+                           seleccion+=" Fotografia ";
+                       }
+                           
                     
+ 
+                       formulario.write("Nombres: "+ nombre+ "  Apellidos:  "+apellidos+ "  Fecha de nacimiento: "+dia+"/"+mes+"/"+año
+                       +"  Sexo: "+ sexo +"  Email:  "+email+ "  Contraseña:  "+contraseña+"  Interes:  "+seleccion);
+                       
+                       formulario.newLine();
+                       
                  
                        txtNombre.setText("");
                        txtApellidos.setText("");
                        txtAño.setText("");
                        txtEmail.setText("");
-                       txtContraseña.setText("");
-                       txtRepetirContraseña.setText("");
+                       pwdContrasena.setText("");
+                       pwdRepetirContrasena.setText("");
                        rbMasculino.setSelected(false);
                        rbFemenino.setSelected(false);
                        
@@ -550,7 +592,7 @@ public class Formulario extends javax.swing.JFrame {
                        cbJuegos.setSelected(false);
                        cbMusica.setSelected(false);
                        cbFotografia.setSelected(false);
-                       
+                       formulario.close();
                    } catch (Exception e) {
                   e.printStackTrace();
                    }
@@ -562,6 +604,10 @@ public class Formulario extends javax.swing.JFrame {
            
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void pwdRepetirContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdRepetirContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pwdRepetirContrasenaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -630,15 +676,15 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPasswordField pwdContrasena;
+    private javax.swing.JPasswordField pwdRepetirContrasena;
     private javax.swing.JRadioButton rbFemenino;
     private javax.swing.JRadioButton rbMasculino;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextArea txtArea;
     private javax.swing.JTextField txtAño;
-    private javax.swing.JTextField txtContraseña;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtRepetirContraseña;
     // End of variables declaration//GEN-END:variables
 
 }
