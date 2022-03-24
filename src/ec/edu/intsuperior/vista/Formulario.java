@@ -540,7 +540,7 @@ public class Formulario extends javax.swing.JFrame {
                    JOptionPane.showMessageDialog(null, "Debe ingresar sus datos");
                } else {
                    try {
-                        BufferedWriter formulario=new BufferedWriter(new FileWriter("C:/leccion/formulario.txt",true));
+                        BufferedWriter formulario=new BufferedWriter(new FileWriter("C:/formulario pop2/formulario.txt",true));
                        nombre =txtNombre.getText();
                        apellidos = txtApellidos.getText();
                        dia=(String)cbxDia.getSelectedItem();
